@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_zoom_drawer: ^3.0.3
   easy_sidemenu: ^0.4.1
+  sqflite: ^2.2.0+3
 
 dev_dependencies:
   flutter_test:
