@@ -1,7 +1,7 @@
 import 'package:agri_mop/utils/type_alert.dart';
 
 import 'package:flutter/material.dart';
-
+//STATE MANAGEMENT ABOUT FUNCTIONS CALLBACKS AND ANOTHERS
 class FertilizerController {
   late BuildContext _context;
   TextEditingController temp = TextEditingController();
@@ -21,7 +21,7 @@ class FertilizerController {
   }
 
   // ==========================================================================
-
+//FUNCTION TO CALCULATE HUMIDITY
   Future<void> calculateHumidity({required String value1,value2}) async {
     //jugar con estos valores
     if (temp.text.contains('4')&&
@@ -35,7 +35,7 @@ class FertilizerController {
       alertError('¡Cultivo Demasiado Seco!');
     }
   }
-
+//ALERTS
   void alertSuccess(String msg) =>
       SnackBarFloating.show(_context, msg, type: TypeAlert.success);
 

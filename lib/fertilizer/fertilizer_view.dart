@@ -3,7 +3,7 @@ import 'package:agri_mop/utils/use_navigation.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/line_chart.dart';
-
+//VIEW ABOUT  FERTILIZER ANG GRAHPS
 class FertilizerView extends StatefulWidget {
   const FertilizerView({Key? key}) : super(key: key);
 

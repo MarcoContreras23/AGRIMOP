@@ -1,4 +1,5 @@
 import 'package:agri_mop/pages/home_page.dart';
+import 'package:agri_mop/routes/router_generator.dart';
 import 'package:flutter/material.dart';
 
 class Routes extends StatefulWidget {
@@ -19,7 +20,8 @@ class _RoutesState extends State<Routes> {
         primarySwatch: Colors.blue,
         primaryColor: p,
       ),
-      home: HomePage(title: "AgriMOP"),
+      home: const HomePage(title: "AgriMOP"),
+      onGenerateRoute: RouterGenerator.generateRoute,
     );
   }
 }

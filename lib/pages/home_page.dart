@@ -1,3 +1,4 @@
+import 'package:agri_mop/fertilizer/widget/list_options.dart';
 import 'package:agri_mop/responsive/Adapt.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
@@ -76,6 +77,7 @@ class _HomePageState extends State<HomePage> {
                 title: 'Dashboard',
                 onTap: () {
                   page.jumpToPage(0);
+                  const ListOptions();
                 },
                 icon: const Icon(Icons.home),
                 badgeContent: const Text(
@@ -137,10 +139,7 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   color: Colors.white,
                   child: const Center(
-                    child: Text(
-                      'Dashboard',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                    child:ListOptions()
                   ),
                 ),
                 Container(

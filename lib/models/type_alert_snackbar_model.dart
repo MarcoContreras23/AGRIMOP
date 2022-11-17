@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//model alert snackbars
 class TypeAlertSnackBar {
   const TypeAlertSnackBar({
     required this.icon,

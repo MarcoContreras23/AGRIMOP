@@ -5,7 +5,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 const String description =
     "";
-
+// CLASS TO SHOW OPTIONS DIALOGS ABOUT FERTILIZER
 class ListOptions extends StatelessWidget {
   const ListOptions({Key? key}) : super(key: key);
 
