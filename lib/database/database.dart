@@ -18,7 +18,7 @@ class DB {
   Future<void> insertFertilizer(Fertilizer fertilizer) async {
     final db = await _openDB();
     await db.insert(
-      'dogs',
+      'fertilizer',
       fertilizer.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
@@ -33,20 +33,10 @@ class DB {
     );
   }
 
-  Future<void> updateDog(Fertilizer fertilizer) async {
-    final db = await _openDB();
-    await db.update(
-      'dogs',
-      fertilizer.toMap(),
-      where: 'id = ?',
-      whereArgs: [fertilizer.id],
-    );
-  }
-
   Future<void> updateFertilizer(Fertilizer fertilizer) async {
     final db = await _openDB();
     await db.update(
-      'dogs',
+      'fertilizer',
       fertilizer.toMap(),
       where: 'id = ?',
       whereArgs: [fertilizer.id],
@@ -66,5 +56,5 @@ class DB {
   }
 
 
-  
+
 }
