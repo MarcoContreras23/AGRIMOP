@@ -1,3 +1,4 @@
+
 const String tableDataFertilizers = 'Fertilizers';
 
 ///Class containing all the attributes or fields of the categories table.

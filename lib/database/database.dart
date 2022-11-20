@@ -95,4 +95,5 @@ class DB {
       throw Exception('Data $id not found');
     }
   }
+
 }
