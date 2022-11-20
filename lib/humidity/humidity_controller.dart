@@ -2,20 +2,20 @@ import 'package:agri_mop/utils/type_alert.dart';
 
 import 'package:flutter/material.dart';
 //STATE MANAGEMENT ABOUT FUNCTIONS CALLBACKS AND ANOTHERS
-class FertilizerController {
+class HumidityController {
   late BuildContext _context;
   TextEditingController temp = TextEditingController();
   TextEditingController sze = TextEditingController();
 
   // ===========================================================================
-  static final FertilizerController _singleton = FertilizerController._();
+  static final HumidityController _singleton = HumidityController._();
 
-  factory FertilizerController(BuildContext context) =>
+  factory HumidityController(BuildContext context) =>
       _singleton._instance(context);
 
-  FertilizerController._();
+  HumidityController._();
 
-  FertilizerController _instance(BuildContext context) {
+  HumidityController _instance(BuildContext context) {
     _singleton._context = context;
     return _singleton;
   }
@@ -30,9 +30,9 @@ class FertilizerController {
     final c2= int.parse(sze.text);
     final c3= ((c1-c2)/c2)*100;
     print(c3);
-      alertSuccess('Cultivo con buen fertilizante');
+      alertSuccess('Nivel de humedad ideal');
     } else if(temp.text.contains('3') && sze.text.contains('103')) {
-      alertError('¡Cultivo bajo en fertilizante!');
+      alertError('¡Cultivo Demasiado Seco!');
     }
   }
 //ALERTS
