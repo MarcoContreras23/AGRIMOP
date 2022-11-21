@@ -77,7 +77,6 @@ class _HomePageState extends State<HomePage> {
                 title: 'Dashboard',
                 onTap: () {
                   page.jumpToPage(0);
-                  const ListOptions();
                 },
                 icon: const Icon(Icons.home),
                 badgeContent: const Text(
