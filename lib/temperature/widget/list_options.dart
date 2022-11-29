@@ -8,7 +8,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
   List<ListSectionModel> listOptions=[
     const ListSectionModel(icon: FontAwesome.leaf, title: 'Analizar fertilizantes', description: '', route: 'fertilizerView'),
     const ListSectionModel(icon: FontAwesome.shopping_bag, title: 'Analizar humedad', description: '', route: 'humidityView'),
-    const ListSectionModel(icon: FontAwesome.cloud, title: 'Analizar temperatura', description: '', route: 'temperatureView'),
+    const ListSectionModel(icon: FontAwesome.shopping_bag, title: 'Analizar temperatura', description: '', route: 'temperatureView'),
   ];
 // CLASS TO SHOW OPTIONS DIALOGS ABOUT FERTILIZER
 class ListOptions extends StatelessWidget {
