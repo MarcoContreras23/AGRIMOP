@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:agri_mop/models/Fertilizer.dart';
 import 'package:agri_mop/models/Humidity.dart';
+import 'package:agri_mop/Models/Temperature.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -31,9 +32,11 @@ class DB {
     const idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const textType = 'TEXT NOT NULL';
     await db.execute(
-        'CREATE TABLE $tableDataFertilizers (${DataFieldsFertilizers.id} $idType, ${DataFieldsFertilizers.name} $textType , ${DataFieldsFertilizers.value} $textType )');
+        'CREATE TABLE $tableDataFertilizers (${DataFieldsFertilizers.id} $idType, ${DataFieldsFertilizers.name} $textType, ${DataFieldsFertilizers.value} $textType )');
     await db.execute(
-        'CREATE TABLE $tableDataHumidity (${DataFieldsHumidity.id} $idType, ${DataFieldsHumidity.name} $textType , ${DataFieldsHumidity.value} )');
+        'CREATE TABLE $tableDataHumidity (${DataFieldsHumidity.id} $idType, ${DataFieldsHumidity.name} $textType, ${DataFieldsHumidity.value} )');
+    await db.execute(
+        'CREATE TABLE $tableDataTemperature (${DataFieldsTemperature.id} $idType, ${DataFieldsTemperature.name} $textType, ${DataFieldsTemperature.value} )');
   }
 
   /*
@@ -53,6 +56,16 @@ class DB {
   Future<Humidity> insertDataProduct(Humidity data) async {
     final db = await database;
     final id = await db?.insert(tableDataHumidity, data.toJson());
+    return data.copy(id: id);
+  }
+
+  /*
+      *receives as a parameter the information of the data to save 
+      *Inserts a record in the database in the humidity table.
+    */
+  Future<Temperature> insertDataTemperature(Temperature data) async {
+    final db = await database;
+    final id = await db?.insert(tableDataTemperature, data.toJson());
     return data.copy(id: id);
   }
 
@@ -91,6 +104,26 @@ class DB {
     );
     if (maps.isNotEmpty) {
       return Humidity.fromJson(maps.first);
+    } else {
+      throw Exception('Data $id not found');
+    }
+  }
+
+  /*
+      *receives as a parameter the id of the data to search for
+      *gets a specific data from the database of the table Temperature
+      *returns a json with the obtained data
+    */
+  Future<Temperature> getDataTemperature(int id) async {
+    final db = await instance.database;
+    final maps = await db!.query(
+      tableDataTemperature,
+      columns: DataFieldsTemperature.values,
+      where: '${DataFieldsTemperature.id} = ?',
+      whereArgs: [id],
+    );
+    if (maps.isNotEmpty) {
+      return Temperature.fromJson(maps.first);
     } else {
       throw Exception('Data $id not found');
     }
