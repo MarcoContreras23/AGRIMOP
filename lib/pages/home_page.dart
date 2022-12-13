@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 6.0, vertical: 3),
                       child: Text(
-                        'New',
+                        'Nuevo',
                         style: TextStyle(fontSize: 11, color: Colors.grey[800]),
                       ),
                     )),
