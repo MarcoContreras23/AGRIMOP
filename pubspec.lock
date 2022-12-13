@@ -169,6 +169,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  community_charts_common:
+    dependency: transitive
+    description:
+      name: community_charts_common
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  community_charts_flutter:
+    dependency: transitive
+    description:
+      name: community_charts_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   convert:
     dependency: transitive
     description:
@@ -190,6 +204,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  d_chart:
+    dependency: "direct main"
+    description:
+      name: d_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   dart_style:
     dependency: transitive
     description:
@@ -251,6 +272,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -380,6 +408,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  lottie:
+    dependency: "direct main"
+    description:
+      name: lottie
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   matcher:
     dependency: transitive
     description:
@@ -609,6 +644,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.0"
+  sparkline:
+    dependency: "direct main"
+    description:
+      name: sparkline
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   sqflite:
     dependency: "direct main"
     description:
@@ -630,6 +672,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  staggered_grid_view_flutter:
+    dependency: "direct main"
+    description:
+      name: staggered_grid_view_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   stream_channel:
     dependency: transitive
     description:
