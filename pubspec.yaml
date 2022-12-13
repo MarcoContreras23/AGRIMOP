@@ -45,6 +45,7 @@ dependencies:
   pdf: ^3.8.4
   advance_pdf_viewer: ^2.0.1
   syncfusion_flutter_pdfviewer: ^20.3.59
+  lottie: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,6 +72,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/agriMOPLogo.png
     - assets/example.pdf
   #   - images/a_dot_ham.jpeg
