@@ -302,7 +302,7 @@ class _MainPageState extends State<DashPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text('Temperatura',
+                      Text('Temperatura 36 C',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
