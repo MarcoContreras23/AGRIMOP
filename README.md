@@ -1,6 +1,11 @@
 # agri_mop
 
-A new Flutter project.
+For the installation of repositories enter the following commands in the terminal 
+
+flutter pub get 
+flutter pub upgrade
+flutter pub upgrade --major-versions
+flutter pub run build_runner build --delete-conflicting-outputs
 
 ## Getting Started
 

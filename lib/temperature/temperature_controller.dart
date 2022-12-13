@@ -1,6 +1,7 @@
 import 'package:agri_mop/utils/type_alert.dart';
 
 import 'package:flutter/material.dart';
+
 //STATE MANAGEMENT ABOUT FUNCTIONS CALLBACKS AND ANOTHERS
 class TemperatureController {
   late BuildContext _context;
@@ -22,18 +23,16 @@ class TemperatureController {
 
   // ==========================================================================
 //FUNCTION TO CALCULATE TEMPERATURE
-  Future<void> calculateTemperature({required String value1,value2}) async {
-    
-    if (temp.text.contains('4')&&
-        sze.text.contains('2')) {
-    final c1= int.parse(temp.text);
-    final c2= int.parse(sze.text);
-    final c3= ((c1-c2)/c2)*100;
+  Future<void> calculateTemperature({required String value1, value2}) async {
+    var valueSensor = int.parse(value1);
+    var valueIdeal = int.parse(value2);
+    if (valueSensor > valueIdeal) {
       alertSuccess('Nivel de temperatura ideal');
-    } else if(temp.text.contains('3') && sze.text.contains('103')) {
+    } else if (valueSensor < valueIdeal) {
       alertError('¡Cultivo demasiado calido!');
     }
   }
+
 //ALERTS
   void alertSuccess(String msg) =>
       SnackBarFloating.show(_context, msg, type: TypeAlert.success);

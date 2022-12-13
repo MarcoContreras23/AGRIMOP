@@ -1,6 +1,7 @@
 import 'package:agri_mop/utils/type_alert.dart';
 
 import 'package:flutter/material.dart';
+
 //STATE MANAGEMENT ABOUT FUNCTIONS CALLBACKS AND ANOTHERS
 class HumidityController {
   late BuildContext _context;
@@ -22,19 +23,16 @@ class HumidityController {
 
   // ==========================================================================
 //FUNCTION TO CALCULATE HUMIDITY
-  Future<void> calculateHumidity({required String value1,value2}) async {
-    //jugar con estos valores
-    if (temp.text.contains('4')&&
-        sze.text.contains('2')) {
-    final c1= int.parse(temp.text);
-    final c2= int.parse(sze.text);
-    final c3= ((c1-c2)/c2)*100;
-    print(c3);
+  Future<void> calculateHumidity({required String value1, value2}) async {
+    var valueSensor = int.parse(value1);
+    var valueIdeal = int.parse(value2);
+    if (valueSensor > valueIdeal) {
       alertSuccess('Nivel de humedad ideal');
-    } else if(temp.text.contains('3') && sze.text.contains('103')) {
+    } else if (valueSensor < valueIdeal) {
       alertError('¡Cultivo Demasiado Seco!');
     }
   }
+
 //ALERTS
   void alertSuccess(String msg) =>
       SnackBarFloating.show(_context, msg, type: TypeAlert.success);
