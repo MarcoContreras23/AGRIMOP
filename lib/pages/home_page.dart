@@ -1,23 +1,23 @@
-import 'package:agri_mop/fertilizer/widget/list_options.dart';
+import 'dart:math';
+
+import 'package:agri_mop/dashboard/dashboard_page.dart';
+import 'package:agri_mop/pages/info.dart';
+import 'package:agri_mop/widgets/list_options.dart';
 import 'package:agri_mop/responsive/Adapt.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-  final String title;
+class HomePage extends StatelessWidget {
+   HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
 
-class _HomePageState extends State<HomePage> {
   PageController page = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text("AgriMOP"),
         centerTitle: true,
       ),
       body: Row(
@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
                 unselectedIconColor: Colors.black54,
                 backgroundColor: Colors.grey,
                 selectedTitleTextStyle: const TextStyle(color: Colors.white),
-                unselectedTitleTextStyle: const TextStyle(color: Colors.black54),
+                unselectedTitleTextStyle:
+                    const TextStyle(color: Colors.black54),
                 iconSize: 20,
                 itemBorderRadius: const BorderRadius.all(
                   Radius.circular(5.0),
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             title: Column(
               children: [
                 ConstrainedBox(
-                  constraints:  BoxConstraints(
+                  constraints: BoxConstraints(
                     maxHeight: Adapt.hp(60),
                     maxWidth: Adapt.wp(60),
                   ),
@@ -79,23 +80,15 @@ class _HomePageState extends State<HomePage> {
                   page.jumpToPage(0);
                 },
                 icon: const Icon(Icons.home),
-                badgeContent: const Text(
-                  '3',
-                  style: TextStyle(color: Colors.white),
+                badgeContent: Text(
+                  Random().nextInt(4).toString(),
+                  style: const TextStyle(color: Colors.white),
                 ),
-                tooltipContent: "This is a tooltip for Dashboard item",
+                tooltipContent: "Observa todos los datos",
               ),
               SideMenuItem(
-                priority: 1,
-                title: 'Users',
-                onTap: () {
-                  page.jumpToPage(1);
-                },
-                icon: const Icon(Icons.supervisor_account),
-              ),
-              SideMenuItem( 
                 priority: 2,
-                title: 'Files',
+                title: 'Informe',
                 onTap: () {
                   page.jumpToPage(2);
                 },
@@ -108,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 6.0, vertical: 3),
                       child: Text(
-                        'New',
+                        'Nuevo',
                         style: TextStyle(fontSize: 11, color: Colors.grey[800]),
                       ),
                     )),
@@ -137,62 +130,25 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   color: Colors.white,
-                  child: const Center(
-                    child:ListOptions()
-                  ),
+                  child: const Center(child: ListOptions()),
                 ),
                 Container(
                   color: Colors.white,
                   child: const Center(
                     child: Text(
-                      'Users',
+                      'Informe',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
                 ),
                 Container(
                   color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Files',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
+                  child: const Center(child: InfoView()),
                 ),
                 Container(
                   color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Download',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Settings',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Only Title',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Only Icon',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                  child:  Center(
+                    child:DashPage(),
                   ),
                 ),
               ],

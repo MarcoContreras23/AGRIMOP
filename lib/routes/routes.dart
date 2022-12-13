@@ -15,12 +15,12 @@ class _RoutesState extends State<Routes> {
     const Color p = Color(0xff416d69);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Corona Out',
+      title: 'AgriMOP',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         primaryColor: p,
       ),
-      home: const HomePage(title: "AgriMOP"),
+      initialRoute: 'dash',
       onGenerateRoute: RouterGenerator.generateRoute,
     );
   }
