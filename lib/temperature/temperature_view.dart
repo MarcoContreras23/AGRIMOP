@@ -1,9 +1,11 @@
+import 'dart:math';
 
 import 'package:agri_mop/temperature/temperature_controller.dart';
 import 'package:agri_mop/utils/use_navigation.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/line_chart.dart';
+
 //VIEW ABOUT  TEMPERATURE ANG GRAHPS
 class TemperatureView extends StatefulWidget {
   const TemperatureView({Key? key}) : super(key: key);
@@ -51,23 +53,29 @@ class _TemperatureViewState extends State<TemperatureView> {
 }
 
 Widget _values() {
+  var intValue = Random().nextInt(37);
+  String stringValue = intValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: const [Text("X = 26°C"), Text("XX = 23°C")],
+    children: [Text("X = $stringValue °C"), const Text("XY = 25°C")],
   );
 }
 
 Widget _valuesTwo() {
+  var intValue = Random().nextInt(37);
+  String stringValue = intValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: const [Text("Y = 28°C"), Text("YY = 24°C")],
+    children: [Text("Y = $stringValue °C"), const Text("ZZ = 24.7°C")],
   );
 }
 
 Widget _valuesTree() {
+  var intValue = Random().nextInt(37);
+  String stringValue = intValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: const [Text("Z = 26°C"), Text("ZZ = 23°C")],
+    children: [Text("Z = $stringValue °C"), const Text("ZZ = 23°C")],
   );
 }
 
@@ -82,13 +90,18 @@ Widget _texts() {
 }
 
 Widget _buttons(BuildContext cxt, TemperatureController contrll) {
+  var intValue = Random().nextInt(37);
+  String stringValue = intValue.toString();
+  var secondValue = Random().nextInt(37);
+  String stringSecondValue = secondValue.toString();
+
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       ElevatedButton(
           onPressed: () => contrll.calculateTemperature(
-              value1: contrll.temp.text = "3",
-              value2: contrll.sze.text = "103"),
+              value1: contrll.temp.text = stringValue,
+              value2: contrll.sze.text = stringSecondValue),
           child: const Text("Calcular")),
       const SizedBox(width: 10),
       ElevatedButton(

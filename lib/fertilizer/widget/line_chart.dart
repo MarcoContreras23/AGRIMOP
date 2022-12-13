@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+
 class SimpleLineChart extends StatelessWidget {
   final List<charts.Series<LinearSales, int>> seriesList;
   final bool animate;
@@ -23,10 +26,10 @@ class SimpleLineChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<LinearSales, int>> _createSampleData() {
     final data = [
-      LinearSales(0, 5),
-      LinearSales(1, 25),
-      LinearSales(2, 100),
-      LinearSales(3, 75),
+      LinearSales(0, Random().nextInt(30)),
+      LinearSales(1, Random().nextInt(25)),
+      LinearSales(2, Random().nextInt(100)),
+      LinearSales(3, Random().nextInt(80)),
     ];
 
     return [

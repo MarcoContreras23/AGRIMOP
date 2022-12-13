@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:agri_mop/utils/use_navigation.dart';
 import 'package:flutter/material.dart';
 
 import 'humidity_controller.dart';
 import 'widget/line_chart.dart';
+
 //VIEW ABOUT  FERTILIZER ANG GRAHPS
 class HumidityView extends StatefulWidget {
   const HumidityView({Key? key}) : super(key: key);
@@ -48,16 +51,20 @@ class _FertilizerViewState extends State<HumidityView> {
 }
 
 Widget _values() {
+  var intValue = Random().nextInt(100);
+  String stringValue = intValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: const [Text("X =76 "), Text("XY =98.29")],
+    children: [Text("X = $stringValue"), const Text("XY = 50")],
   );
 }
 
 Widget _valuesTwo() {
+  var intValue = Random().nextInt(100);
+  String stringValue = intValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: const [Text("Y =212 "), Text("ZZ =53.29")],
+    children: [Text("Y = $stringValue "), const Text("ZZ = 50")],
   );
 }
 
@@ -72,13 +79,17 @@ Widget _texts() {
 }
 
 Widget _buttons(BuildContext cxt, HumidityController contrll) {
+  var intValue = Random().nextInt(100);
+  String stringValue = intValue.toString();
+  var secondValue = Random().nextInt(20);
+  String stringSecondValue = secondValue.toString();
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       ElevatedButton(
           onPressed: () => contrll.calculateHumidity(
-              value1: contrll.temp.text = "4",
-              value2: contrll.sze.text = "102"),
+              value1: contrll.temp.text = stringValue,
+              value2: contrll.sze.text = stringSecondValue),
           child: const Text("Calcular")),
       const SizedBox(width: 10),
       ElevatedButton(
