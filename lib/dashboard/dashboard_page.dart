@@ -431,7 +431,7 @@ class _MainPageState extends State<DashPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const <Widget>[
-                          Text('Water',
+                          Text('Agua',
                               style: TextStyle(color: Colors.redAccent)),
                           Text('80%',
                               style: TextStyle(
