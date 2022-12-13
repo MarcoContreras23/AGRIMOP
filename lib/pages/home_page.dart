@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:agri_mop/dashboard/dashboard_page.dart';
 import 'package:agri_mop/pages/info.dart';
 import 'package:agri_mop/widgets/list_options.dart';
 import 'package:agri_mop/responsive/Adapt.dart';
@@ -146,11 +147,8 @@ class HomePage extends StatelessWidget {
                 ),
                 Container(
                   color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Settings',
-                      style: TextStyle(fontSize: 35),
-                    ),
+                  child:  Center(
+                    child:DashPage(),
                   ),
                 ),
               ],
